@@ -13,16 +13,11 @@ class MainTest(unittest.TestCase):
         cp.add(1, 2)
         self.assertEqual(3, cp.sum())
 
-    def test_sum_tuples_one_couple_with_negative(self):
-        cp = CoupleOperator()
-        cp.add(-6, 2)
-        self.assertEqual(-4, cp.sum())
-
     def test_sum_tuples_multiple_tuples(self):
         cp = CoupleOperator()
         cp.add(9, 7)
-        cp.add(-6, 2)
-        self.assertEqual(12, cp.sum())
+        cp.add(6, 2)
+        self.assertEqual(24, cp.sum())
 
     def test_add(self):
         cp = CoupleOperator()
@@ -39,6 +34,38 @@ class MainTest(unittest.TestCase):
         self.assertEqual((0, 1), cp.tuples[0])
         self.assertEqual((2, 3), cp.tuples[1])
         self.assertEqual((4, 5), cp.tuples[2])
+
+    def test_add_more_than_ten(self):
+        cp = CoupleOperator()
+        for i in range(10):
+            cp.add(0, 1)
+        self.assertEqual(10, len(cp.tuples))
+        with self.assertRaises(Exception) as context:
+            cp.add(0, 1)
+        self.assertEqual(10, len(cp.tuples))
+
+    def test_add_negative_number(self):
+        cp = CoupleOperator()
+        with self.assertRaises(Exception) as context:
+            cp.add(0, -9)
+        with self.assertRaises(Exception) as context:
+            cp.add(-9, 0)
+        with self.assertRaises(Exception) as context:
+            cp.add(-10, -20)
+        self.assertEqual(0, len(cp.tuples))
+
+    def test_add_bounds(self):
+        cp = CoupleOperator()
+        cp.add(0, 0)
+        self.assertEqual(1, len(cp.tuples))
+        cp.add(9, 1)
+        self.assertEqual(2, len(cp.tuples))
+
+    def test_add_with_sum_more_than_ten(self):
+        cp = CoupleOperator()
+        with self.assertRaises(Exception) as context:
+            cp.add(15, 5)
+        self.assertEqual(0, len(cp.tuples))
 
     def test_pop(self):
         cp = CoupleOperator()

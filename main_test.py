@@ -15,9 +15,9 @@ class MainTest(unittest.TestCase):
 
     def test_sum_tuples_multiple_tuples(self):
         cp = CoupleOperator()
-        cp.add(9, 7)
+        cp.add(3, 7)
         cp.add(6, 2)
-        self.assertEqual(24, cp.sum())
+        self.assertEqual(18, cp.sum())
 
     def test_add(self):
         cp = CoupleOperator()
@@ -65,6 +65,12 @@ class MainTest(unittest.TestCase):
         cp = CoupleOperator()
         with self.assertRaises(Exception) as context:
             cp.add(15, 5)
+        self.assertEqual(0, len(cp.tuples))
+
+    def test_add_with_real_values(self):
+        cp = CoupleOperator()
+        with self.assertRaises(Exception) as context:
+            cp.add(3.5, 5)
         self.assertEqual(0, len(cp.tuples))
 
     def test_pop(self):

@@ -24,6 +24,35 @@ class MainTest(unittest.TestCase):
         cp.add(-6, 2)
         self.assertEqual(12, cp.sum())
 
+    def test_add(self):
+        cp = CoupleOperator()
+        cp.add(1, 0)
+        self.assertEqual(1, len(cp.tuples))
+        self.assertEqual((1, 0), cp.tuples[0])
+
+    def test_add_multiple(self):
+        cp = CoupleOperator()
+        cp.add(0, 1)
+        cp.add(2, 3)
+        cp.add(4, 5)
+        self.assertEqual(3, len(cp.tuples))
+        self.assertEqual((0, 1), cp.tuples[0])
+        self.assertEqual((2, 3), cp.tuples[1])
+        self.assertEqual((4, 5), cp.tuples[2])
+
+    def test_pop(self):
+        cp = CoupleOperator()
+        cp.add(0, 1)
+        cp.add(2, 3)
+        cp.pop()
+        self.assertEqual(3, len(cp.tuples))
+        self.assertEqual((0, 1), cp.tuples[0])
+
+    def test_pop_empty_list(self):
+        cp = CoupleOperator()
+        cp.pop()
+        self.assertEqual(0, len(cp.tuples))
+
 
 if __name__ == '__main__':
     unittest.main()

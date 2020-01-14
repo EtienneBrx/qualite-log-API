@@ -37,6 +37,16 @@ class MainTest(unittest.TestCase):
         cp.add(6, 3)
         self.assertEqual(25, cp.sum())
 
+    def test_sum_one_couple_spare(self):
+        cp = CoupleOperator()
+        cp.add(7, 3)
+        self.assertEqual(10, cp.sum())
+
+    def test_sum_one_couple_strike(self):
+        cp = CoupleOperator()
+        cp.add(10, 0)
+        self.assertEqual(10, cp.sum())
+
     def test_add(self):
         cp = CoupleOperator()
         cp.add(1, 0)

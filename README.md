@@ -1,5 +1,4 @@
-# Projet Qualité Logicielle
-[![Build Status](https://travis-ci.com/EtienneBrx/qualite-log-API.svg?branch=master)](https://travis-ci.com/EtienneBrx/qualite-log-API)
+# Projet Qualité Logicielle [![Build Status](https://travis-ci.com/EtienneBrx/qualite-log-API.svg?branch=master)](https://travis-ci.com/EtienneBrx/qualite-log-API)  [![codecov](https://codecov.io/gh/EtienneBrx/qualite-log-API/branch/master/graph/badge.svg)](https://codecov.io/gh/EtienneBrx/qualite-log-API)
 Paulin Lambert - Hugo Tamberi - Etienne Berrié
 
 ## Branches

@@ -29,7 +29,7 @@ class MainTest(unittest.TestCase):
         cp = CoupleOperator()
         cp.add(10, 0)
         cp.add(6, 3)
-        self.assertEqual(31, cp.sum())
+        self.assertEqual(28, cp.sum())
 
     def test_sum_with_second_number_ten(self):
         cp = CoupleOperator()

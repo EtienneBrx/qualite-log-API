@@ -26,7 +26,16 @@ class MainTest(unittest.TestCase):
         self.assertEqual(25, cp.sum())
 
     def test_sum_with_first_number_ten(self):
-        pass
+        cp = CoupleOperator()
+        cp.add(10, 0)
+        cp.add(6, 3)
+        self.assertEqual(31, cp.sum())
+
+    def test_sum_with_second_number_ten(self):
+        cp = CoupleOperator()
+        cp.add(0, 10)
+        cp.add(6, 3)
+        self.assertEqual(25, cp.sum())
 
     def test_add(self):
         cp = CoupleOperator()

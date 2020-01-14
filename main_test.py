@@ -15,9 +15,18 @@ class MainTest(unittest.TestCase):
 
     def test_sum_tuples_multiple_tuples(self):
         cp = CoupleOperator()
-        cp.add(3, 7)
+        cp.add(3, 5)
         cp.add(6, 2)
-        self.assertEqual(18, cp.sum())
+        self.assertEqual(16, cp.sum())
+
+    def test_sum_with_couple_equal_ten(self):
+        cp = CoupleOperator()
+        cp.add(5, 5)
+        cp.add(6, 3)
+        self.assertEqual(25, cp.sum())
+
+    def test_sum_with_first_number_ten(self):
+        pass
 
     def test_add(self):
         cp = CoupleOperator()

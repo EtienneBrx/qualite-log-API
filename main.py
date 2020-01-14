@@ -15,9 +15,13 @@ class CoupleOperator:
 
     def sum(self):
         tuple_sum = 0
-        for t in self.tuples:
-            for value in t:
-                tuple_sum += value
+        for idx, t in enumerate(self.tuples):
+            if idx + 1 < len(self.tuples):
+                if t[0] == 10:
+                    tuple_sum += sum(self.tuples[idx + 1])
+                elif sum(t) == 10:
+                    tuple_sum += self.tuples[idx + 1][0]
+            tuple_sum += sum(t)
         return tuple_sum
 
     def pop(self):

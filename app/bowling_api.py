@@ -1,4 +1,4 @@
-class BowlingGame:
+class BowlingScore:
     def __init__(self):
         self.tuples = []
 

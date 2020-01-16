@@ -12,3 +12,6 @@ NEW - Ajout d'une nouvelle fonctionnalité
 IMP - Amélioration d'une fonctionnalité existante  
 FIX - Correction  
 CLEAN - Mise au propre du code  
+
+## Politique de pull request
+Lors de la création d'une pull request, au moins une personne doit relire le code qui sera ensuite mergé sur master.

@@ -4,7 +4,6 @@ from app.bowling import BowlingGame, check_input
 
 class BowlingGameTest(unittest.TestCase):
     def test_check_input_invalid_bounds(self):
-        bowling = BowlingGame()
         result = check_input(-6)
         self.assertFalse(result)
 
@@ -12,7 +11,6 @@ class BowlingGameTest(unittest.TestCase):
         self.assertFalse(result)
 
     def test_check_input_invalid_type(self):
-        bowling = BowlingGame()
         result = check_input('A')
         self.assertFalse(result)
 
@@ -20,12 +18,10 @@ class BowlingGameTest(unittest.TestCase):
         self.assertFalse(result)
 
     def test_check_input_valid(self):
-        bowling = BowlingGame()
         result = check_input(4)
         self.assertTrue(result)
 
     def test_check_input_valid_bounds(self):
-        bowling = BowlingGame()
         result = check_input(0)
         self.assertTrue(result)
 

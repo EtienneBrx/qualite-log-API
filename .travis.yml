@@ -11,5 +11,10 @@ script: py.test  --cov-report term --cov=app/
 env:
   - CODECOV_TOKEN=8a295a11-1eba-427b-b894-a32758fb2804
 
+coverage:
+  precision: 2
+  round: down
+  range: "65...100"
+
 after-success:
   - codecov
